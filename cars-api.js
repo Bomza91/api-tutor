@@ -34,19 +34,23 @@ function createCar(){
 
 }
 
+const listOfCars = function(qty){
+    var cars = [];
+
+    for(var i=0;i<qty;i++){
+      cars.push(createCar())
+    }
+    return cars
+}
 
 module.exports = function(){
 
     const createCars = function(req, res, next){
-        var cars = [];
 
-        for(var i=0;i<30;i++){
-          cars.push(createCar())
-        }
+        var carCount = req.params.car_count || 30;
 
         //console.log(JSON.parse(JSON.stringify(cars)))
-
-        res.json(cars);
+        res.json(listOfCars(carCount));
     }
 
     return {
