@@ -19,7 +19,7 @@ const carsAPI = CarsAPI();
 app.get('/api/cars', carsAPI.createCars);
 app.get('/api/cars/:car_count', carsAPI.createCars);
 
-var port = process.env.port || 3007;
+var port = process.env.PORT || 3007;
 http.listen(port, function(){
     console.log('running at port :' , port)
 });
