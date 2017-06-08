@@ -1,8 +1,12 @@
-# Express seed project
+# API tutor
 
-Basic seed project to start express projects from
+Simple API endpoints to help you to learn coding.
 
-Start with:
-* Clone from github into a new folder: `npm clone https://github.com/avermeulen/express-seed <target_folder>`
-* cd `cd <target_folder>`
-* then do `npm install`
+Deployed at: `http://api-tutor.herokuapp.com/v1/cars`
+
+## Current API end points
+
+| End point      |    Description       |
+|----------------|----------------------|
+| `/v1/cars`       | Return 30 cars of various models and colors                      |
+| `/v1/cars/{car_count}`       | Return a specified number of cars of various models and colors                      | 
