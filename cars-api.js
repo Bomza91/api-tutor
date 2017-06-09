@@ -10,7 +10,7 @@ var models = {
 
 };
 
-const colors = ['blue', 'red', 'orange', 'white', 'grey'];
+const colors = ['Blue', 'Red', 'Orange', 'White', 'Grey'];
 const regNumbers = ['CJ', 'CY', 'CL', 'CK', 'CA', 'CF'];
 
 
