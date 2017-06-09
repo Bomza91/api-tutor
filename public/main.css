@@ -1,19 +1,12 @@
-.light{
-    height : 5em;
-    width : 5em;
-    background-color: yellow;
-    border-radius: 50%;
+body {
+    font-family: Arial;
+    background: powderblue;
 }
 
-.off {
-    opacity: 0.2;
-}
-
-.on {
-    opacity: 1;
-}
-
-.message {
-    color: green;
-    margin-bottom: 1em;
+.car {
+    padding-bottom: 1em;
+    border : 1px solid;
+    width : 15em;
+    padding : 0.5em;
+    margin : 0.5em;
 }
