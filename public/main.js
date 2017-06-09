@@ -17,16 +17,11 @@ document.addEventListener('DOMContentLoaded', function(){
                 carsElem.appendChild(elem);
             });
 
-
         })
         .catch(function(err){
             //alert(err);
             carsElem.innerHTML = err;
             carsElem.style.backgroundColor = 'Crimson';
-
-        })
-
-
-
+        });
 
 });
