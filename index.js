@@ -16,6 +16,8 @@ app.use(express.static('public'));
 const carsAPI = CarsAPI();
 
 app.get('/v1/cars', carsAPI.createCars);
+app.get('/v1/colors', carsAPI.colors);
+app.get('/v1/cars/color/:car_color', carsAPI.carsOfColor);
 app.get('/v1/cars/:car_count', carsAPI.createCars);
 
 var port = process.env.PORT || 3007;

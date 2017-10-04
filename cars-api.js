@@ -52,6 +52,17 @@ const listOfCars = function(qty){
 
 module.exports = function(){
 
+
+    const carsOfColor = function(req, res, next){
+        let color = req.params.car_color;
+        res.json(listOfCars(100).filter((car) => car.color.toLowerCase() === color.toLowerCase() ));
+    };
+
+    const showColors = function(req, res, next){
+        //let color = req.params.car_color;
+        res.json(colors);
+    };
+
     const createCars = function(req, res, next){
 
         var carCount = req.params.car_count || 30;
@@ -61,6 +72,8 @@ module.exports = function(){
     }
 
     return {
+        colors : showColors,
+        carsOfColor,
         createCars
     }
 }
