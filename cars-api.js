@@ -22,6 +22,7 @@ function randomNumberNotLessThan(lowest, range){
     return lowest + randomNumber(range);
 }
 
+var cars = [];
 
 function createCar(){
 
@@ -41,39 +42,69 @@ function createCar(){
 
 }
 
-const listOfCars = function(qty){
-    var cars = [];
+const listOfCars = function(){
 
-    for(var i=0;i<qty;i++){
-      cars.push(createCar())
+    if (cars.length === 0){
+        for(var i=0;i<100;i++){
+            cars.push(createCar())
+        }
     }
+
     return cars
 }
 
 module.exports = function(){
 
-
     const carsOfColor = function(req, res, next){
-        let color = req.params.car_color;
-        res.json(listOfCars(100).filter((car) => car.color.toLowerCase() === color.toLowerCase() ));
+        let color = req.params.color;
+        let theCars = listOfCars();
+        res.json(theCars
+                .filter((car) =>
+                    car.color.toLowerCase() === color.toLowerCase() ));
+
+    };
+
+    const carsOfMake = function(req, res, next){
+        let make = req.params.make;
+        let theCars = listOfCars();
+
+        res.json(theCars
+                .filter((car) =>
+                    car.make.toLocaleLowerCase() === make.toLowerCase()
+                ));
+    };
+
+    const carsOfColorAndMake = function(req, res, next){
+        let color = req.params.color;
+        let make = req.params.make;
+        let theCars = listOfCars();
+
+        res.json(theCars
+                .filter((car) =>
+                    car.color.toLowerCase() === color.toLowerCase()
+                    && car.make.toLocaleLowerCase() === make.toLowerCase()
+                ));
+
     };
 
     const showColors = function(req, res, next){
-        //let color = req.params.car_color;
         res.json(colors);
     };
 
+    const showMakes = function(req, res, next){
+        res.json(makes);
+    };
+
     const createCars = function(req, res, next){
-
-        var carCount = req.params.car_count || 30;
-
-        //console.log(JSON.parse(JSON.stringify(cars)))
-        res.json(listOfCars(carCount));
+        res.json(listOfCars());
     }
 
     return {
+        makes : showMakes,
         colors : showColors,
         carsOfColor,
+        carsOfMake,
+        carsOfColorAndMake,
         createCars
     }
 }

@@ -17,7 +17,10 @@ const carsAPI = CarsAPI();
 
 app.get('/v1/cars', carsAPI.createCars);
 app.get('/v1/colors', carsAPI.colors);
-app.get('/v1/cars/color/:car_color', carsAPI.carsOfColor);
+app.get('/v1/makes', carsAPI.makes);
+app.get('/v1/cars/color/:color', carsAPI.carsOfColor);
+app.get('/v1/cars/make/:make', carsAPI.carsOfMake);
+app.get('/v1/cars/make/:make/color/:color', carsAPI.carsOfColorAndMake);
 app.get('/v1/cars/:car_count', carsAPI.createCars);
 
 var port = process.env.PORT || 3007;
