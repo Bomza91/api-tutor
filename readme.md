@@ -8,7 +8,7 @@ Deployed at: `http://api-tutor.herokuapp.com/v1/cars`
 
 | End point      |    Description       |
 |----------------|----------------------|
-| `[/v1/cars](http://api-tutor.herokuapp.com/v1/cars)`       | Return 30 cars of various models and colors                      |
+| [/v1/cars](http://api-tutor.herokuapp.com/v1/cars)       | Return 30 cars of various models and colors                      |
 | `/v1/colors`       | Return all available car colors|
 | `/v1/makes`       | Return all available car makes|
 | `/v1/cars/color/:color`       | Return  cars of a specific color |
